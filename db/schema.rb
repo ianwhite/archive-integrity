@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202133538) do
+ActiveRecord::Schema.define(version: 20151202145024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20151202133538) do
     t.string  "country"
     t.string  "certificate"
     t.string  "image_uid"
+    t.string  "imdb_id"
+    t.string  "tmdb_id"
+    t.string  "tmdb_image"
+    t.string  "corner_event_id"
+    t.string  "tmdb_backdrop"
+    t.float   "popularity"
+    t.float   "vote_average"
+    t.integer "vote_count"
   end
 
   create_table "interactions", force: :cascade do |t|
