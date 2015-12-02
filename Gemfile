@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'imdb'
+gem 'dragonfly'
 
 group :development, :test do
   gem 'pry'
