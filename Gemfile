@@ -12,6 +12,7 @@ gem 'turbolinks'
 
 gem 'imdb'
 gem 'dragonfly'
+gem 'acts_as_taggable_on'
 
 group :development, :test do
   gem 'pry'
