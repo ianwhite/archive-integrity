@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202145024) do
+ActiveRecord::Schema.define(version: 20151202155112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151202145024) do
     t.float   "popularity"
     t.float   "vote_average"
     t.integer "vote_count"
+    t.text    "overview"
   end
 
   create_table "interactions", force: :cascade do |t|
@@ -42,6 +43,20 @@ ActiveRecord::Schema.define(version: 20151202145024) do
     t.datetime "updated_at",       null: false
     t.datetime "created_at",       null: false
   end
+
+  create_table "people", force: :cascade do |t|
+    t.string "tmdb_id"
+    t.string "name"
+    t.string "tmdb_image"
+  end
+
+  create_table "person_films", force: :cascade do |t|
+    t.integer "film_id"
+    t.integer "person_id"
+  end
+
+  add_index "person_films", ["film_id"], name: "index_person_films_on_film_id", using: :btree
+  add_index "person_films", ["person_id"], name: "index_person_films_on_person_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -67,4 +82,6 @@ ActiveRecord::Schema.define(version: 20151202145024) do
     t.boolean "critic",     default: false, null: false
   end
 
+  add_foreign_key "person_films", "films"
+  add_foreign_key "person_films", "people"
 end

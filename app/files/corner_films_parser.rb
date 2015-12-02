@@ -12,6 +12,7 @@ class CornerFilmsParser
       if row['poster_path'].present? && row['tmdb_film_id'].present? && row['imdb_id'].present?
         Film.create!(
           corner_event_id: row['corner_event_id'],
+          overview: row['overview'],
           tmdb_id: row['tmdb_film_id'],
           title: row['title'],
           tmdb_backdrop: row['backdrop_path'],
