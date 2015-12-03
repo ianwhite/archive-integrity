@@ -1,0 +1,12 @@
+canvas {
+}
+
+img {
+	display: none;
+}
+
+.film {
+	padding-bottom: 35px;
+	float: left;
+	/*width: 50%;*/
+}
