@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -13,6 +12,7 @@ gem 'turbolinks'
 gem 'imdb'
 gem 'dragonfly'
 gem 'acts_as_taggable_on'
+gem 'pg_search'
 
 group :development, :test do
   gem 'pry'

@@ -1,4 +1,6 @@
-Hello <%= current_user.name %>
+<h1>Hello <%= current_user.name %></h1>
+
+<form method="get"><input type="text" name="q" placeholder="people and things..." value="<%= session[:q] %>"><input type="submit" value="Go!"></form>
 
 <div class="films">
   <%= render films %>
