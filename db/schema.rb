@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203115930) do
+ActiveRecord::Schema.define(version: 20151203141201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151203115930) do
     t.float   "vote_average"
     t.integer "vote_count"
     t.text    "overview"
+    t.float   "freshness"
   end
 
   create_table "interactions", force: :cascade do |t|

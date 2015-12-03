@@ -31,7 +31,7 @@ class Film < ActiveRecord::Base
     ((year || 1970) - 1915).to_f / 100
   end
 
-  def freshness
+  def calculate_freshness
     [1, base_freshness + (interactions.count * 0.1)].min
   end
 end

@@ -1,6 +1,15 @@
-<h1>Hello <%= current_user.name %></h1>
+<% content_for :body_onload, "onLoad();" %>
 
-<form method="get"><input type="text" name="q" placeholder="people and things..." value="<%= session[:q] %>"><input type="submit" value="Go!"></form>
+<header>
+  <h1>Hello <%= current_user.name %></h1>
+
+  <form method="get">
+    <input type="text" name="q" placeholder="people and things..." value="<%= session[:q] %>">
+    <input type="submit" name="submit" value="Go!">
+    <input type="submit" name="submit" value="Most Fresh">
+    <input type="submit" name="submit" value="Least Fresh">
+  </form>
+</header>
 
 <div class="films">
   <%= render films %>

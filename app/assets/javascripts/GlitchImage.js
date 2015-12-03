@@ -46,7 +46,7 @@ GlitchImage.prototype.onLoad = function() {
 
     // delayed glitch to avoid glitch callback issues
     var cb = this;
-    this.canvas.onclick = function(){cb.glitchImage();};
+    // this.canvas.onclick = function(){cb.glitchImage();};
     setTimeout(function(){ cb.glitchImage(); }, 500 * this.id);
 }
 
@@ -61,16 +61,16 @@ GlitchImage.prototype.glitchImage = function(options) {
     glitchExisting = options.glitchExisting || false;
     this.parameters.seed = randomInRange(0, 99);
     this.parameters.amount = randomInRange(0, 99);
-    this.parameters.iterations = map(this.freshness, 1, 0, 0, 16);
+    this.parameters.iterations = map(this.freshness, 1, 0, 0, 20);
     this.parameters.quality = map(this.freshness, 1, 0, 0, 30);
 
     //glitch text
     var title = this.container.getElementsByTagName("h1")[0].innerHTML;
     var glitchedTitle = "";
-    var increment = Math.round(map(this.freshness, 1, 0, 8, 1));
+    var increment = Math.round(map(this.freshness, 1, 0, 4, 1));
     for (var i = 0; i < title.length; i++) {
         var char = title.substr(i, 1);
-        if (i%increment == 0 && Math.random() > 0.5) {
+        if (Math.random() > this.freshness) {
             glitchedTitle += weirdos[randomInRange(0,weirdos.length,0)];
         }
         else {

@@ -1,14 +1,20 @@
-<article data-image-src="<%= film.image_url %>" data-freshness="<%= film.freshness %>">
-  <h1><%= film.title %></h1>
-  <h2><%= film.year %></h2>
-  <div class="people">
-    <% film.people.map(&:name).each do |name| %>
-      <%= link_to name, "/?q=#{name}" %>
-    <% end %>
-  </p>
+<% content_for :body_onload, "onLoad(true);" %>
 
-  <p class="links">
-    <%= link_to "Back", root_path %>
-    <%= link_to "View #{film.title}", interactions_path(film_id: film.id), method: 'post' %>
-  </p>
-</article>
+<header>
+  <p><%= link_to "&lt; Back".html_safe, root_path %></p>
+  <p><%= link_to "View it (MAKE IT FRESHER!)", interactions_path(film_id: film.id), method: 'post' %></p>
+</header>
+
+<%= link_to interactions_path(film_id: film.id), method: 'post' do %>
+  <article class="film" data-image-src="<%= film.image_url %>" data-freshness="<%= film.freshness %>">
+    <h1><%= film.title %></h1>
+    <h2><%= film.year %></h2>
+  </article>
+<% end %>
+
+<div class="films">
+  <h3>Click to see films featuring:</h3>
+  <% film.people.map(&:name).each do |name| %>
+    <%= link_to name, "/?q=#{name}" %>
+  <% end %>
+</div>

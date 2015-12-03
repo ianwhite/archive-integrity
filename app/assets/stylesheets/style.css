@@ -10,3 +10,60 @@ img {
 	float: left;
 	/*width: 50%;*/
 }
+
+.films { margin-top: 80px; }
+
+.film {
+  position: relative;
+  overflow: hidden;
+  margin:10px;
+}
+
+.film h1 {
+  position: absolute;
+  background-color: #FFF;
+  color: #333;
+  top: 5px;left:5px;
+  margin-right: 5px;
+  font-size: 24px;
+  padding: 5px;
+}
+
+.film h2 {
+  position: absolute;
+  background-color: #FFF;
+  color: #2C1D55;
+  right: 5px;
+  top: 100px;
+  margin-right: 5px;
+  font-size: 24px;
+  padding: 5px;
+}
+
+.films .film {
+  height: 450px;
+}
+
+header {
+  z-index: 10;
+  background-color: red;
+  color: white;
+  position: fixed;
+  height: 60px;
+  top:0; left:0; right: 0;
+  padding: 5px;
+}
+
+header h1 {
+  font-size: 20px;
+}
+
+header form {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+header a {
+  color: white;
+  font-size: 20px;20px;
+}
