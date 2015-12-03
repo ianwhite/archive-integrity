@@ -1,7 +1,6 @@
 <%= link_to film_path(film) do %>
-  <article class="film" data-image-src="<%= film.thumb_url %>" data-freshness="<%= rand() %>">
+  <article class="film" data-image-src="<%= film.thumb_url %>" data-freshness="<%= film.freshness %>">
     <h1><%= film.title %></h1>
     <h2><%= film.year %></h2>
-    <img src="<%= film.thumb_url %>">
   </article>
 <% end %>
