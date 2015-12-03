@@ -9,7 +9,7 @@ class Film < ActiveRecord::Base
   end
 
   def image_url
-    "http://image.tmdb.org/t/p/w500/#{tmdb_image}"
+    "http://image.tmdb.org/t/p/w600/#{tmdb_image}"
   end
 
   def backdrop_url
